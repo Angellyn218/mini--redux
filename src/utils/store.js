@@ -1,6 +1,24 @@
 import { createStore } from 'redux';
 import reducers from './reducers';
 
-const store = createStore(reducers);
+const randomNum = () => Math.floor(Math.random() * 20000);
+const cars = [
+    {
+      id: randomNum(),
+      make: 'Honda',
+      model: 'Civic',
+      year: '2008',
+      isRunning: false,
+    },
+    {
+      id: randomNum(),
+      make: 'Tesla',
+      model: 'Y',
+      year: '2021',
+      isRunning: false,
+    },
+]
+
+const store = createStore(reducers, {cars});
 
 export default store;
